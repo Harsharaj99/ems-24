@@ -1,0 +1,58 @@
+<br><h1>Register Here!!</h1><br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="mb-3" [formGroup]="employees" (ngSubmit)="register()" >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="name" placeholder="Enter Your Name"><br>
+                    <span class="text-danger" *ngIf="name && name.invalid && name.touched">*name is not valid</span>
+                   
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email" aria-describedby="emailHelp"><br>
+                  <span class="text-danger" *ngIf="email && email.invalid && email.touched">*email is required</span>
+                 
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select formControlName="gender">
+                      <option value="" disabled>Select your gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="nonBinary">Non-binary</option>
+                      <option value="preferNotToSay">Prefer not to say</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div><br>
+                  
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Phone</label>
+                    <input type="number" class="form-control"  aria-describedby="emailHelp" placeholder="Enter mobile Number" formControlName="phone"><br>
+                    <span class="text-danger" *ngIf="phone && phone.invalid && phone.touched">*phone number is not valid</span>
+                   
+                  </div>
+                  <div>
+                    <label for="status">Status</label>
+                    <select formControlName="status">
+                      <option value="" disabled>Select your status</option>
+                      <option value="single">Active</option>
+                      <option value="single">Inactive</option>
+                      
+                    </select>
+                  </div><br>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" formControlName="password" placeholder="Enter Password"><br>
+                  <span class="text-danger" *ngIf="pswd && pswd.invalid && pswd.touched">*password is not valid</span>
+              
+                </div>
+               
+                <button [disabled]="employees.invalid" type="submit" class="btn btn-primary">Register</button>
+              </form>
+              <div class="mb-2"><a routerLink="login">Already have an account?Click here to login</a></div>
+
+        </div>
+    </div>
+</div>

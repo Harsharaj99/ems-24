@@ -1,0 +1,36 @@
+<br><h3>Edit Employee</h3><br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="mb-3" [formGroup]="employees" (ngSubmit)="edit()"  >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp">
+                    
+                    
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">phone</label>
+                    <input type="number" class="form-control" formControlName="phone" aria-describedby="emailHelp">
+                    
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Salary</label>
+                    <input type="number" class="form-control" formControlName="salary" aria-describedby="emailHelp">
+                    
+                    
+                  </div>
+                
+                
+                <button [disabled]="employees.invalid" type="submit" class="btn btn-primary">Edit</button>
+              </form>
+        </div>
+    </div>
+</div>

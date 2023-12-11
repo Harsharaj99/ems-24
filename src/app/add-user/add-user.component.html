@@ -1,0 +1,36 @@
+<br><h1>Add Employee</h1><br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="mb-3" [formGroup]="employees" (ngSubmit)="add()" >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp"><br>
+                    <span class="text-danger" *ngIf="name && name.invalid && name.touched">*name is required</span>
+                    
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp"><br>
+                  <span class="text-danger" *ngIf="email && email.invalid && email.touched">*email is required</span>
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">phone</label>
+                    <input type="number" class="form-control" formControlName="phone" aria-describedby="emailHelp"><br>
+                    <span class="text-danger" *ngIf="phone && phone.invalid && phone.touched">*mobile number is required</span>
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Salary</label>
+                    <input type="number" class="form-control" formControlName="salary" aria-describedby="emailHelp"><br>
+                    <span class="text-danger" *ngIf="salary && salary.invalid && salary.touched">*salary is required</span>
+                    
+                  </div>
+                
+                
+                <button [disabled]="employees.invalid" type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
